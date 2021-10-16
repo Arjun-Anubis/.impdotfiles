@@ -99,11 +99,11 @@ bindsym $mod+shift+e exec i3-msg exit
 
 #Reboot
 
-bindsym ctrl+$alt+del exec reboot
+bindsym ctrl+$alt+delete exec reboot
 
 #Poweroff
 
-bindsym ctrl+$alt+shift+del exec poweroff
+bindsym ctrl+$alt+shift+delete exec poweroff
 
 #Lock
 
