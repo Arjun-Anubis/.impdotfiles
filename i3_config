@@ -76,6 +76,12 @@ bindsym $mod+shift+a exec whatsapp
 bindsym $mod+shift+d exec teams
 bindsym $alt+shift+w exec qutebrowser
 
+#Pulse Audio controls
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
 #ScreenShot
 
 bindsym $mod+shift+s exec sleep 0.5 && ss
@@ -173,6 +179,7 @@ font pango:Source Code Pro Medium 9
 exec_always ~/.config/polybar/launch.sh
 exec_always ~/.config/i3/.script
 
+exec_always feh --bg ~/.fehbg
 exec_always --no-startup-id /usr/share/regolith-compositor/init
 exec --startup-d /usr/bin/rotification-daemon
 
