@@ -3,9 +3,9 @@ syntax on
 set number
 set relativenumber
 set nocp
-set noshowmode  " to get rid of thing like --INSERT--
-set noshowcmd  " to get rid of display of last command
-set shortmess+=F  " to get rid of the file name displayed in the command line bar
+set noshowmode
+set noshowcmd
+set shortmess+=F
 set laststatus=2
 set hidden
 set wildmenu
