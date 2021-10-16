@@ -1,0 +1,178 @@
+#Setting mod and alt 
+set $mod Mod4
+set $alt Mod1
+
+#Defining workspaces
+
+set $ws9 "9"
+set $ws8 "8"
+set $ws7 "7"
+set $ws6 "6"
+set $ws5 "5"
+set $ws4 "4"
+set $ws3 "3"
+set $ws2 "2"
+set $ws1 "1"
+
+#Moving to workspaces
+
+bindsym $mod+1 workspace number "1"
+bindsym $mod+2 workspace number "2"
+bindsym $mod+3 workspace number "3"
+bindsym $mod+4 workspace number "4"
+bindsym $mod+5 workspace number "5"
+bindsym $mod+6 workspace number "6"
+bindsym $mod+7 workspace number "7"
+bindsym $mod+8 workspace number "8"
+bindsym $mod+9 workspace number "9"
+
+#Moving window to workspace
+
+bindsym $mod+shift+1 move container to workspace number "1"
+bindsym $mod+shift+2 move container to workspace number "2"
+bindsym $mod+shift+3 move container to workspace number "3"
+bindsym $mod+shift+4 move container to workspace number "4"
+bindsym $mod+shift+5 move container to workspace number "5"
+bindsym $mod+shift+6 move container to workspace number "6"
+bindsym $mod+shift+7 move container to workspace number "7"
+bindsym $mod+shift+8 move container to workspace number "8"
+bindsym $mod+shift+9 move container to workspace number "9"
+
+#Focusing windows
+
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+
+bindsym $mod+k focus up
+bindsym $mod+j focus down
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+
+#Moving windows
+
+bindsym $mod+shift+k move up
+bindsym $mod+shift+j move down
+bindsym $mod+shift+h move left
+bindsym $mod+shift+l move right
+
+#Terminal
+
+bindsym $mod+Return exec /usr/bin/x-terminal-emulator
+bindsym ctrl+$alt+t exec gnome-terminal
+
+#Launcher
+
+bindsym $alt+space exec dmenu_run -b
+
+#FZF
+
+bindsym $mod+space exec gnome-terminal --full-screen -- nfin
+
+#Shortcuts to some programs
+
+bindsym $mod+shift+a exec whatsapp
+bindsym $mod+shift+d exec teams
+bindsym $alt+shift+w exec qutebrowser
+
+#ScreenShot
+
+bindsym $mod+shift+s exec sleep 0.5 && ss
+
+#LookSelector
+
+bindsym $mod+$alt+l exec rofi -show look -modi look:/usr/share/rofi/modi/look-selector.sh
+
+#Interacting with windows
+
+bindsym $mod+shift+q [con_id="__focused__"] kill
+bindsym $mod+$alt+q [con_id="__focused__"] exec --no-startup-id kill -9 $(xdotool getwindowfocus getwindowpid)
+
+#Reload
+
+bindsym $mod+shift+r restart
+
+# Logout
+
+bindsym $mod+shift+e exec i3-msg exit
+
+#Reboot
+
+bindsym ctrl+$alt+del exec reboot
+
+#Poweroff
+
+bindsym ctrl+$alt+shift+del exec poweroff
+
+#Lock
+
+
+#Orientation
+
+bindsym $mod+v split vertical
+bindsym $mod+g split horizontal
+
+#Fullscreen
+
+bindsym $mod+f fullscreen toggle
+
+#Floating windows should float
+
+for_window [class="floating_window"] floating enable
+
+#Resize mode
+
+mode "resize" {
+
+	#Resize 
+        bindsym h resize shrink width 6 px or 6 ppt
+        bindsym j resize shrink height 6 px or 6 ppt
+        bindsym k resize grow height 6 px or 6 ppt
+        bindsym l resize grow width 6 px or 6 ppt
+
+        #Resize with arrows
+        bindsym Left resize shrink width 6 px or 6 ppt
+        bindsym Down resize grow height 6 px or 6 ppt
+        bindsym Up resize shrink height 6 px or 6 ppt
+        bindsym Right resize grow width 6 px or 6 ppt
+
+	#Quitting resize mode
+	bindsym Escape mode "default"
+	bindsym Return mode "default"
+
+}
+
+bindsym $mod+r mode "resize"
+
+#Setting a few defaults
+
+floating_modifier $mod
+workspace_layout default
+
+#Apperance
+
+hide_edge_borders smart
+
+gaps inner 0
+gaps outer 0
+
+smart_gaps on
+
+default_border pixel 1
+default_floating_border pixel 1
+
+popup_during_fullscreen smart
+
+focus_follows_mouse yes
+
+font pango:Source Code Pro Medium 9
+
+#StartUp
+
+exec_always ~/.config/polybar/launch.sh
+exec_always ~/.config/i3/.script
+
+exec_always --no-startup-id /usr/share/regolith-compositor/init
+exec --startup-d /usr/bin/rotification-daemon
+
