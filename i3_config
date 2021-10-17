@@ -59,7 +59,7 @@ bindsym $mod+shift+l move right
 
 #Terminal
 
-bindsym $mod+Return exec /usr/bin/x-terminal-emulator
+bindsym $mod+Return exec /usr/bin/gnome-terminal
 bindsym ctrl+$alt+t exec gnome-terminal
 
 #Launcher
@@ -176,7 +176,7 @@ font pango:Source Code Pro Medium 9
 
 #StartUp
 
-exec_always ~/.config/polybar/launch.sh
+exec_always ~/.config/polybar/launch.sh --hack
 exec_always ~/.config/i3/.script
 
 exec_always feh --bg ~/.fehbg
