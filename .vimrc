@@ -9,6 +9,11 @@ set shortmess+=F
 set laststatus=2
 set hidden
 set wildmenu
+set encoding=utf8
+set fillchars+=vert:│
+set path+=**
+set path+=~/.vim/snippets
+hi VertSplit cterm=NONE
 
 "Removing Arrow keys
 " noremap <Up> <Nop>
@@ -36,8 +41,10 @@ command Run !%
 "Leader key bindings
 let mapleader = ' '
 nnoremap <Leader>w <C-w>
-nnoremap <Leader>v :vsplit
-nnoremap <Leader>s :split
+nnoremap <Leader>v :vsplit 
+nnoremap <Leader>s :split 
+nnoremap <Leader>b :buffer 
+nnoremap <Leader>e :edit 
 
 "Css colors
 syn match tmuxColour            /\<colo[u]*r[0-9]\+/      display

@@ -26,6 +26,8 @@ bindsym $mod+7 workspace number "7"
 bindsym $mod+8 workspace number "8"
 bindsym $mod+9 workspace number "9"
 
+bindsym $mod+Tab scratchpad show
+
 #Moving window to workspace
 
 bindsym $mod+shift+1 move container to workspace number "1"
@@ -37,6 +39,8 @@ bindsym $mod+shift+6 move container to workspace number "6"
 bindsym $mod+shift+7 move container to workspace number "7"
 bindsym $mod+shift+8 move container to workspace number "8"
 bindsym $mod+shift+9 move container to workspace number "9"
+
+bindsym $mod+shift+Tab move scratchpad
 
 #Focusing windows
 
@@ -59,7 +63,7 @@ bindsym $mod+shift+l move right
 
 #Terminal
 
-bindsym $mod+Return exec /usr/bin/gnome-terminal
+bindsym $mod+Return  exec  /usr/bin/gnome-terminal
 bindsym ctrl+$alt+t exec gnome-terminal
 
 #Launcher
@@ -84,7 +88,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 #ScreenShot
 
-bindsym $mod+shift+s exec sleep 0.5 && ss
+bindsym $mod+shift+s exec ss
 
 #LookSelector
 
@@ -126,6 +130,7 @@ bindsym $mod+f fullscreen toggle
 #Floating windows should float
 
 for_window [class="floating_window"] floating enable
+bindsym $mod+Shift+space floating toggle
 
 #Resize mode
 
@@ -182,4 +187,4 @@ exec_always ~/.config/i3/.script
 #exec_always feh --bg ~/.fehbg
 exec_always --no-startup-id /usr/share/regolith-compositor/init
 exec --startup-d /usr/bin/rotification-daemon
-
+exec_always dbus-update-activation-environment --systemd --all
