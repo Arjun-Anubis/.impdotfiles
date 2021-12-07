@@ -72,13 +72,14 @@ bindsym $alt+space exec dmenu_run -b
 
 #FZF
 
-bindsym $mod+space exec gnome-terminal --full-screen -- nfin
+bindsym $mod+space exec gnome-terminal --full-screen -- nfin &
 
 #Shortcuts to some programs
 
 bindsym $mod+shift+a exec whatsapp
 bindsym $mod+shift+d exec teams
 bindsym $alt+shift+w exec qutebrowser
+bindsym $mod+shift+Return exec qutebrowser
 
 #Pulse Audio controls
 
@@ -88,7 +89,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 #ScreenShot
 
-bindsym $mod+shift+s exec ss
+bindsym $mod+shift+s exec sleep 1 && import png:- |xclip -selection clipboard -t image/png
+
 
 #LookSelector
 
@@ -103,7 +105,12 @@ bindsym $mod+$alt+q [con_id="__focused__"] exec --no-startup-id kill -9 $(xdotoo
 
 bindsym $mod+shift+r restart
 
-# Logout
+#Keyboard Layout
+
+bindsym $mod+$alt+Escape exec setxkbmap us
+bindsym $mod+$alt+Tab exec setxkbmap in hin-kagapa
+
+#Logout
 
 bindsym $mod+shift+e exec i3-msg exit
 
@@ -178,6 +185,7 @@ popup_during_fullscreen smart
 focus_follows_mouse yes
 
 font pango:Source Code Pro Medium 9
+font pango:Mangal Regular 9
 
 #StartUp
 

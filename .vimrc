@@ -1,5 +1,6 @@
 " Some default settings
 syntax on
+filetype plugin on
 set number
 set relativenumber
 set nocp
@@ -13,7 +14,6 @@ set encoding=utf8
 set fillchars+=vert:│
 set path+=**
 set path+=~/.vim/snippets
-hi VertSplit cterm=NONE
 
 "Removing Arrow keys
 " noremap <Up> <Nop>
@@ -32,6 +32,11 @@ map <C-e> <End>
 imap <C-a> <Home>
 imap <C-e> <End>
 
+" Weird command mode mapping
+nnoremap ; :
+inoremap  diw
+
+
 "Compiling commands
 command Compile !javac %
 command Sh !chmod +x %
@@ -45,7 +50,9 @@ nnoremap <Leader>v :vsplit
 nnoremap <Leader>s :split 
 nnoremap <Leader>b :buffer 
 nnoremap <Leader>e :edit 
+nnoremap <Leader>g :W3m 
 
+hi Visual cterm=none ctermbg=Darkmagenta ctermfg=LightGreen
 "Css colors
 syn match tmuxColour            /\<colo[u]*r[0-9]\+/      display
 for s:i in range(0, 255)
@@ -56,6 +63,9 @@ for s:i in range(0, 255)
 imap jj <Esc>
 
 "Save as root
+command Q :q
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command! -nargs=1 -complete=help H h <args> | only
+command Copy :%"+y
 
 

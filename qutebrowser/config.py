@@ -22,8 +22,8 @@ c.aliases["read"] = "spawn --userscript readability-js"
 c.aliases["mpv"] = "spawn --userscript view_in_mpv"
 c.aliases["aq"] = "set-cmd-text :spawn --userscript "
 c.aliases["xx"] = "spawn --userscript ~/qutesc"
+c.aliases["Q"] = "quit"
 
-c.colors.webpage.darkmode.enabled = True
 #c.webpage.prefers_color_scheme_dark = True
 #c.content.user_stylesheets = "~/github/solarized-everything-css/css/gruvbox/gruvbox-all-sites.css"
 
