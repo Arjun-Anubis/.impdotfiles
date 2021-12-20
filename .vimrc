@@ -68,4 +68,7 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command! -nargs=1 -complete=help H h <args> | only
 command Copy :%"+y
 
-
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif

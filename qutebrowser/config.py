@@ -35,3 +35,4 @@ c.content.blocking.adblock.lists = [
 
 
 
+config.set( "colors.webpage.bg", "black" )

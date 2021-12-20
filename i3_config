@@ -87,9 +87,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-#ScreenShot
+#screenshot
 
-bindsym $mod+shift+s exec sleep 1 && import png:- |xclip -selection clipboard -t image/png
+bindsym $mod+shift+s exec ~/.local/bin/ss portion
+bindsym $alt+shift+s exec ~/.local/bin/ss 
 
 
 #LookSelector
@@ -179,6 +180,7 @@ smart_gaps on
 
 default_border pixel 1
 default_floating_border pixel 1
+client.focused              #353439 #9FEE00 #7B9F35
 
 popup_during_fullscreen smart
 
@@ -191,6 +193,7 @@ font pango:Mangal Regular 9
 
 exec_always ~/.config/polybar/launch.sh --hack
 exec_always ~/.config/i3/.script
+exec_always dunst
 
 #exec_always feh --bg ~/.fehbg
 exec_always --no-startup-id /usr/share/regolith-compositor/init

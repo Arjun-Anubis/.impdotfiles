@@ -13,6 +13,10 @@ shopt -s globstar
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+
+
+
+bind -x '"\C-l":clear'
 #Something to do with less
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -27,6 +31,7 @@ alias grep='grep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias vi='nvim'
 
 #Setting path
 PATH+=:/home/anubi/bin/:/home/anubi/.local/bin:
@@ -41,3 +46,4 @@ if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx 
 fi
 export WINEDEBUG="-all"
+export EDITOR=nvim

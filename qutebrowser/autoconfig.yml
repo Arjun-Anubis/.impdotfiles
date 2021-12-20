@@ -10,7 +10,10 @@ settings:
     global:
       normal:
         aq: set-cmd-text :spawn --userscript
+        wi: devtools window
         xx: spawn --userscript /home/anubi/qutesc
+  colors.webpage.bg:
+    global: black
   colors.webpage.darkmode.enabled:
     global: true
   colors.webpage.prefers_color_scheme_dark:
@@ -51,6 +54,8 @@ settings:
     https://teams.microsoft.com: true
     https://web.whatsapp.com: true
     https://www.chess.com: true
+  content.pdfjs:
+    global: false
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
   content.user_stylesheets:
