@@ -16,6 +16,8 @@ set path+=**
 set path+=~/.vim/snippets
 set guicursor=n-v-c:block-Cursor
 
+colo delek
+
 au TextYankPost * silent! lua vim.highlight.on_yank()
 
 "Removing Arrow keys

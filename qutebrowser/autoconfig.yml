@@ -49,6 +49,7 @@ settings:
     https://us04web.zoom.us: true
     https://web.whatsapp.com: true
   content.notifications:
+    global: true
     https://meet.google.com: true
     https://play.pokemonshowdown.com: true
     https://teams.microsoft.com: true
@@ -68,6 +69,10 @@ settings:
     - '{}'
   scrolling.bar:
     global: overlay
+  statusbar.show:
+    global: always
+  tabs.show:
+    global: multiple
   url.default_page:
     global: about:blank
   url.searchengines:

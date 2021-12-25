@@ -32,6 +32,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias vi='nvim'
+alias m='ncmpcpp'
 
 #Setting path
 PATH+=:/home/anubi/bin/:/home/anubi/.local/bin:
@@ -42,8 +43,12 @@ PATH+=:/home/anubi/bin/:/home/anubi/.local/bin:
 
 
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx 
+# if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+#   exec startx 
+# fi
+if [ $(tty) = "/dev/tty1" ]; then
+	exec startx
 fi
+
 export WINEDEBUG="-all"
 export EDITOR=nvim

@@ -87,6 +87,16 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
+
+#mopidy/mpd controls
+
+# bindsym XF86AudioPlayPause exec mpc toggle
+# bindsym XF86AudioPause exec mpc pause
+bindsym XF86AudioPlay exec mpc play
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioStop exec mpc stop
+
 #screenshot
 
 bindsym $mod+shift+s exec ~/.local/bin/ss portion
@@ -191,7 +201,9 @@ font pango:Mangal Regular 9
 
 #StartUp
 
-exec_always ~/.config/polybar/launch.sh --hack
+# exec_always ~/.config/polybar/launch.sh --hack
+
+exec_always ~/polybar-collection/themes/gruvbox/launch.sh
 exec_always ~/.config/i3/.script
 exec_always dunst
 
@@ -199,3 +211,6 @@ exec_always dunst
 exec_always --no-startup-id /usr/share/regolith-compositor/init
 exec --startup-d /usr/bin/rotification-daemon
 exec_always dbus-update-activation-environment --systemd --all
+exec_always discord
+exec_always bg_reset
+for_window [instance="__scratchpad"] move scratchpad

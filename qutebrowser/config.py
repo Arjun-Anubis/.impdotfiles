@@ -14,7 +14,10 @@ c.url.searchengines = {
         'DEFAULT': 'https://google.com/search?q={}',
         "y": "https://www.youtube.com/results?search_query={}",
         "w": "https://en.wikipedia.org/wiki/{}",
-        "gist": "https://gist.github.com/search?q={}"
+        "gist": "https://gist.github.com/search?q={}",
+        "g" : "https://github.com/search?q={}",
+        "ddg" : "https://duckduckgo.com?q={}",
+        "r" : "https://www/reddit.com/search?q={}"
         }
 
 
