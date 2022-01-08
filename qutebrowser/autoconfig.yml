@@ -14,10 +14,12 @@ settings:
         xx: spawn --userscript /home/anubi/qutesc
   colors.webpage.bg:
     global: black
+  colors.webpage.darkmode.algorithm:
+    global: lightness-cielab
   colors.webpage.darkmode.enabled:
     global: true
-  colors.webpage.prefers_color_scheme_dark:
-    global: true
+  colors.webpage.preferred_color_scheme:
+    global: dark
   content.blocking.method:
     global: both
   content.desktop_capture:
@@ -48,7 +50,7 @@ settings:
     https://teams.microsoft.com: true
     https://us04web.zoom.us: true
     https://web.whatsapp.com: true
-  content.notifications:
+  content.notifications.enabled:
     global: true
     https://meet.google.com: true
     https://play.pokemonshowdown.com: true
@@ -60,7 +62,7 @@ settings:
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
   content.user_stylesheets:
-    global: ~/github/solarized-everything-css/css/gruvbox/gruvbox-all-sites.css
+    global: ~/github/solarized-everything-css/css/darculized/darculized-generic.css
   editor.command:
     global:
     - gnome-terminal
@@ -71,8 +73,12 @@ settings:
     global: overlay
   statusbar.show:
     global: always
+  tabs.position:
+    global: top
   tabs.show:
-    global: multiple
+    global: always
+  tabs.width:
+    global: 2%
   url.default_page:
     global: about:blank
   url.searchengines:

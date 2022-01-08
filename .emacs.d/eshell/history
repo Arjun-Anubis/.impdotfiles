@@ -1,0 +1,11 @@
+ls
+ls -l
+cd ..
+cd 
+cd projects/
+ls
+cd dial_tone_generator/
+ls
+make
+make clean
+make
