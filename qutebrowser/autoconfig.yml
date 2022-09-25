@@ -6,18 +6,40 @@
 
 config_version: 2
 settings:
+  aliases:
+    global:
+      Q: quit
+      aq: 'set-cmd-text :spawn --userscript '
+      mpv: spawn --userscript view_in_mpv
+      pyank: yank inline [{title}]({url})
+      q: close
+      qa: quit
+      read: spawn --userscript readability
+      w: session-save
+      wq: quit --save
+      wqa: quit --save
+      xx: spawn --userscript ~/qutesc
   bindings.commands:
     global:
       normal:
+        ',m': open teams
+        ',n': open -t teams
+        ;: set-cmd-text -s :open -t
+        <F2>: spawn --userscript teams_dmenu
+        <F5>: spawn --userscript mkfifo
+        <F6>: spawn --userscript update_html
+        <F9>: greasemonkey-reload
         aq: set-cmd-text :spawn --userscript
+        q: fake-key
         wi: devtools window
         xx: spawn --userscript /home/anubi/qutesc
+        yt: pyank
   colors.webpage.bg:
     global: black
   colors.webpage.darkmode.algorithm:
     global: lightness-cielab
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
   colors.webpage.preferred_color_scheme:
     global: dark
   content.blocking.method:
@@ -28,7 +50,13 @@ settings:
     https://us04web.zoom.us: true
   content.geolocation:
     https://globe.adsbexchange.com: true
+  content.headers.user_agent:
+    global: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+      Gecko) Chrome/92.0.4515.131 Safari/537.36
+  content.javascript.can_access_clipboard:
+    global: true
   content.media.audio_capture:
+    https://app.element.io: true
     https://demos.openvidu.io: true
     https://meet.google.com: true
     https://proctoredtest9.fiitjee.com: true
@@ -50,6 +78,8 @@ settings:
     https://teams.microsoft.com: true
     https://us04web.zoom.us: true
     https://web.whatsapp.com: true
+  content.mouse_lock:
+    https://gameforge.com: true
   content.notifications.enabled:
     global: true
     https://meet.google.com: true
@@ -62,27 +92,39 @@ settings:
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
   content.user_stylesheets:
-    global: ~/github/solarized-everything-css/css/darculized/darculized-generic.css
+    global: null
   editor.command:
     global:
     - gnome-terminal
     - --
     - vi
     - '{}'
+  qt.args:
+    global:
+    - widevine-path=/home/anubi/bin/libwidevinecdm.so
   scrolling.bar:
     global: overlay
   statusbar.show:
-    global: always
+    global: never
   tabs.position:
     global: top
   tabs.show:
-    global: always
+    global: multiple
   tabs.width:
-    global: 2%
+    global: 15%
   url.default_page:
     global: about:blank
   url.searchengines:
     global:
       DEFAULT: https://google.com/search?q={}
+      chem: https://pubchem.ncbi.nlm.nih.gov/#query={}
+      ddg: https://duckduckgo.com?q={}
+      g: https://github.com/search?q={}
+      gist: https://gist.github.com/search?q={}
+      r: https://www/reddit.com/search?q={}
+      w: https://en.wikipedia.org/wiki/{}
+      y: https://www.youtube.com/results?search_query={}
   url.start_pages:
     global: about:blank
+  window.title_format:
+    global: '{current_title}{title_sep}Main Browser'

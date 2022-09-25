@@ -20,8 +20,17 @@
 (general-evil-define-key 'normal 'global
  :prefix "SPC"
  ;; prefix=space
-    "<SPC>"  'counsel-M-x
-    "e"      'counsel-find-file
-    "o"      'ivy-switch-buffer
+    "<SPC>"  'counsel-buffer-or-recentf
+    "l"  'counsel-M-x
+    ;; "e"      'counsel-find-file
+    "o"      'counsel-buffer-or-recentf
+    "e"      'counsel-fzf
     "r"      'counsel-recentf
+	"h"      'counsel-describe-function
+	"w"      'evil-window-map
+	"x"      'evil-quit
+	"f"      'counsel-find-file
  )
+
+(evil-define-key 'insert 'global
+  (kbd "C-p") 'company-complete )

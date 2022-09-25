@@ -1,29 +1,67 @@
+#define S_base03        #252020
+#define S_base02        #5D4883
+#define S_base01        #586e75
+#define S_base00        #FFE6B3
+#define S_base0         #73D0FF
+#define S_base1         #5CCFE6
+#define S_base3         #FFFFFF
+/* #define S_base3         #FFFFFF */
+#define S_base2         #CBCCC6
+#define S_yellow        #E7B85A
+#define S_orange        #FF3333
+#define S_red           #FF3333
+#define S_magenta       #B48EAD
+#define S_violet        #D4BFFF
+#define S_blue          #77A8D9
+#define S_cyan          #95E6CB
+#define S_green         #A6CC70
 
-! Dracula Xresources palette
-*.foreground: #F8F8F2
-*.background: #282A36
-*.color0:     #000000
-*.color8:     #4D4D4D
-*.color1:     #FF5555
-*.color9:     #FF6E67
-*.color2:     #50FA7B
-*.color10:    #5AF78E
-*.color3:     #F1FA8C
-*.color11:    #F4F99D
-*.color4:     #BD93F9
-*.color12:    #CAA9FA
-*.color5:     #FF79C6
-*.color13:    #FF92D0
-*.color6:     #8BE9FD
-*.color14:    #9AEDFE
-*.color7:     #BFBFBF
-*.color15:    #E6E6E6
+*background:            S_base03
+*foreground:            S_base2
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+
+!! black dark/light
+*color0:                S_base02
+*color8:                S_violet
+
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+
+!! green dark/light
+*color2:                S_green
+*color10:               S_green
+/* *color10:               S_base01 */
+
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+
+!! blue dark/light
+*color4:                S_base0
+*color12:               S_blue
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+
+!! white dark/light
+*color7:                #FFFFFF
+/* *color7:                S_base2 */
+*color15:               #FFFFFF
+/* *color15:               S_base3 */
+
 !! URxvt Appearance
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
-URxvt.internalBorder: 24
-URxvt.cursorBlink: true
+URxvt.cursorBlink: false
 URxvt.cursorUnderline: false
 URxvt.saveline: 2048
 URxvt.scrollBar: false
@@ -31,3 +69,10 @@ URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
+URxvt.font: xft:JetBrains Mono:size=9,xft:Yatra One:size=9,Noto color emoji
+/* URxvt.boldFont: xft:JetBrains Mono:pixelsize=12 */
+/* URxvt.italicFont: xft:JetBrains Mono:pixelsize=12 */
+URxvt.intensityStyles: True
+URxvt.borderWidth: 0
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0

@@ -26,3 +26,4 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 export XDG_CONFIG_HOME=/home/anubi/.config
+. "$HOME/.cargo/env"

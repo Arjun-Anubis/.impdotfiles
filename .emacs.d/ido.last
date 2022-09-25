@@ -1,0 +1,54 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/anubi/java/" . "practicals/")
+ ("/home/anubi_old/" . "anubi_old/")
+ ("/home/" . "anubi_old/")
+ ("/home/anubi/" . "general/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/anubi/.impdotfiles/"
+ "/home/anubi/temp/"
+ "/home/anubi/java/practicals/"
+ "/home/anubi_old/anubi_old/"
+ "/home/anubi/general/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "i3_config"
+ "emacs-wm"
+ "switchCase.java"
+ "if.java"
+ "code.org"
+ "TODO.org"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/anubi/.impdotfiles/" (25070 19765 619995 529000) "new_bashrc" "./" "Readme.md" "../" "i3_config" ".zshrc" ".tmux.conf" ".emacs.d/" ".xinitrc" "polybar/" ".gitconfig" ".xmodmap" ".git/" ".gtkrc-2.0" ".Xresources" ".profile" ".bashrc" "qutebrowser/" ".vimrc" "nvim/")
+
+ ("/home/anubi/.impdotfiles/.emacs.d/" (25070 27631 1570 841000) "ido.last~" "init.el~" "./" "elpa/" "../" "org-mode-cnf.org" "ido.last" "init.el" "eshell/" "ac-comphist.dat" "recentf" "looks.el" "places" "edit.el" "keybind.el~" "url/" "keybind.el" "site-lisp/" "auto-save-list/" "recentf~")
+
+ ("/home/anubi/temp/" (25068 33808 666840 630000) "harness/" "19th April/" "OneDrive_1_20-01-2022.zip" "licenses/" "nyxt-2.2.4.tar.xz" "README.md" "10-Jan/" "./" "test.png" "NOTICE" "LICENSE" "javafx/" ".test.swo" "../" "15-Dec/" "12-07-2021/" "extide/" "ergonomics/" "DEPENDENCIES" "extra/" "build.xml" "13-Jan/" "emacs-wm" ".test.swp" "php/" "cpplite/" "28th June/" ".test2.swp" "nyxt_2.2.4_amd64.deb" "websvccommon/" "13th oct/" "08-Sept/" "ide/" "nbi/" "07-12/" "nbbuild/" "15-nov/" "09th August/" "usr/" "platform/" "test5" "apisupport/" "22 NOV/" "nb/" "18-Jan/" "facebook_social_graph.jpg" "webcommon/" "gnu/" "27-Aug/" "Map-IX_Blank.pdf" "groovy/" "enterprise/" "netbeans-12.6-source.zip" "test2" "whatsapp_local/" "5th April/" "profiler/" "13-12/" "java/")
+
+ ("/home/anubi/" (25069 14632 508963 75000) ".swo" ".keras/" ".xbk/" ".openshot_qt/" ".wpm.csv" ".swp" ".fzf.bash" "bin/" ".npm/" ".xsession-errors" ".mapscii/" ".dotfiles/" ".adobe/" ".emscripten_cache/" "node_modules/" ".update-timestamp" ".saves/" ".java/" ".zcompdump" ".visualvm/" ".dbus/" ".mpd/" ".pki/" "tokens/" ".emacs.d.old/" ".kanatest/" ".config/" ".gradle/" ".bg.png" ".maxima/" ".gvimrc" ".sage/" ".steampid" ".ipython/" "Music/" ".terminfo/" "math_proofs/" ".ssh/" "projects/" "keydog/" ".zshrc" ".sqlite_history" ".minecraft/" ".tmux.conf" ".hushlogin" ".fehbg" ".thunderbird/" ".run/" ".mpdconf" ".impdotfiles/" ".fonts/" ".pythonhist" ".lesshst" ".jgitconfig" ".vim/" ".grip/" "downloads/" ".mycroft/" ".zshrc.old" "github/" "skit/" ".cache/" ".macromedia/" ".emacs.d/" ".sc_history" ".links2/" "wapython/" ".lyrics/" "general/" ".vim-anywhere/" ".order.md.swp" ".vim_w3m_hist" ".emscripten" ".xinitrc" ".tmux/" ".arduino15/" ".wget-hsts" ".mlterm/" ".wpmrc" ".viminfo" ".gitconfig" ".gchemutils/" ".joe_state" ".chrome/" ".wxMaxima" ".fbtermrc" "temp/" ".ts_node_repl_history" ".clay/" ".spacemacs.d/" ".local/" "snap/" ".alacritty.yml" ".xmodmap" ".bash_history" ".pamusb/" ".subversion/" ".inputrc" ".tlauncher/" "scripts/" ".gphoto/" ".android/" ".mutt/" ".surf/" ".var/" ".gtkrc-2.0" ".hplip/" "Downloads/" ".spacemacs" "package.json" ".urxvt/" ".python_history" ".Xresources-regolith" ".Xauthority" ".pyenvs/" "videos/" ".steampath" ".xkb/" "kern/" ".xournal/" "yarn.lock" ".Xresources" ".icons/" "polybar-collection/" ".profile" ".xbindkeys_config/" ".kodi/" ".w3m/" ".yarnrc" ".nvim/" ".gnuplot_history" ".spacemacs.env" ".yarn/" "school/" ".bashrc" "notes/" ".vimrc.old" ".cargo/" "spotify-downloader/" "documents/" ".fzf.zsh" ".pkg-cache/" ".gchempaint/" ".gtkrc.bak" ".mplayer/" ".sudo_as_admin_successful" ".vimrc" ".gnupg/" ".old.Xdefaults" ".mozilla/" "pix/" "java/" "../" "./")
+
+ ("/home/anubi/java/practicals/" (25068 27558 12095 876000) "./" "../" "if.java~" "if.java" "switchCase.java")
+
+ ("/home/anubi/java/" (25068 27267 954323 275000) "stylesheet.css" "Q3.java" "package-search-index.js" "question5.class" "k.class" "help-doc.html" "Question5.java" "unnamed.so" "question3.class" "Menu.class" "./" "k.java" "Q6.html" "search.js" "menu.build_artifacts.txt" "Q4.java" "../" "Q6.class" "HelloAndroid/" "Q14.class" "package-summary.html" "package-tree.html" "t.java" "question5.java" "fibonacci.java" "testsoc.class" "Question.class" "Atransport.class" "jquery/" "t.txt" "tes.java" "question3.java" "Question.java" "test.class" "weird.java" "deprecated-list.html" "srchJdoc.sh" "Question5.class" "member-search-index.zip" "allpackages-index.html" "constant-values.html" "overview-tree.html" "package-search-index.zip" "l.class" "t.c" "l.java" "Q15.java" "member-search-index.js" "java-bot/" ".git/" "practicals/" "type-search-index.zip" "resources/" "index-all.html" "allclasses.html" "Q6.java" "index.html" "Menu.java" "conditioner.class" "qq" "a.out" "testsoc.java" "Q24.java" "weird.class" "script.js" "Q3.class" "t.class" "fibonacci.class" "allclasses-index.html" "type-search-index.js" "test.java" "Q24.class" "practial_file/" "Q14.java" "test.build_artifacts.txt" "element-list" "conditioner.java" "Q4.class" "menu" "test")
+
+ ("/home/anubi/general/" (25068 27240 637306 383000) "./" "../" "TODO.org" "TODO.org~" "OpenHouse/")
+
+ ("/home/anubi_old/anubi_old/" (25065 7897 269210 385000) "test.tex" "SOD/" "IST-6.png" "EveLauncher-1967440-489269d9-bbca-4f29-8bfa-b53cfbd55767.exe" "stop-motion/" "scene6.mp4" "adb/" "brainfuck" "scene8.mp4" "session.data.json" "logg" "script-draft-1" "open-wa-session.sw_col.json" "async/" "node_modules/" "scene2.mp4" "amonet-tank-v1.2.2.zip" "hamara manch skit final.mp4" "luna.msstyles" "pi/" "compooter.mp4" "code.html" "osu.AppImage" "luna.rar" "k.bin" "drive_c/" "maze.png" "go/" "vim/" "geckodriver.log" "new_bashrc" "test.bin" "./" "IST-5.png" "main.conf" "Public/" "busybox-android/" "stop-motion.mp4" "Windows_10.msstyles" "_IGNORE_session/" "out3.mp3" "noob.mp4" "../" "user.reg" "test.org" "amonet/" "Videos/" "META-INF/" "code.tex" "userdef.reg" "color-spaces.pl" "dots/" "c/" "#code.org#" "jukebox/" "kernel_mod/" "mairimashita-iruma-kun-2nd-season-015.ts" "lightline.vim/" "compoooter.mp4" "test.wav" "grapejuice/" "TODO.org" "dosdevices/" "pihole-youtube-block/" "code.org" "ll.py" "redo/" "hm.mp4" "__pycache__/" "tdrop/" "felici/" "open-wa-session.postman_collection.json" "scene10.mp4" "nw/" "test.pdf" "scratch" "assignment.json" "IST-0.png" "scene9.mp4" "full.ts" "wget-log" ".wine/" "old_home/" "g.c" "code.odt" "tabula-jar-1.2.1.zip" "ideas-2" "mairimashita-iruma-kun-2nd-season-017.ts" "bot_back/" "syl" "kimetsu-no-yaiba-001.mp4" "snap/" "erwic/" "hamara manch skit.mp4" "IST-3.png" "bfinterpreter-1.0.0/" "eDEX-UI-Linux-x86_64.AppImage" "sdk-tools-linux-3859397.zip" "out.mp3" "siji/" "Mangal Regular.zip" "LosslessCut-linux.AppImage" "colors" "IST-4.png" "h.log" "Desktop/" "scene1.mp4" "config.bak/" "Templates/" "Screenshot 2021-10-30 at 4.03.38 PM.png" "keydog_client/" "a.out.so" "bitmap-fonts/" "Documents/" "NetBeansProjects/" "py/" "crabgame/" "code.org~" "package-lock.json" "sc/" "core" "scratchpad" "IST-1.png" "Are We Ever Completely Free From Microsoft Windows-97LagKxc1v0.mkv" "wget-log.1" "terminfo.src" "manim/" "system.reg" "a.out" "out.png" "bot.py" "start-reg" "pbar/" "graalvm-ce-java11-21.2.0/" "onedrive/" "scene7.mp4" "install_pwshwrapper.exe" "deleted_files" "scene12.mp4" "test.py" "scene3.mp4" ".steam/" "final/" "hm.mpg" "toucan/" "Mangal Regular/" "scene11.mp4" "amonet-tank-v1.2.2/" "Screenshot from 2021-10-19 18-02-35.png" "out2.mp3" "wnode/" "Pictures/" "scene5.mp4" "code.html~" "hamara manch skit final-proj.llc" "I made a fully functional LEGO RUBIK'S CUBE (3x3x3)-tolQCt76LBk.f137.mp4.part" "autoconfig.yml" "IST-2.png" "containers/" "scene4.mp4" "nike/" "k.json" "yar/" "code.pdf" "test/")
+
+ ("/home/anubi_old/" (25064 65525 313770 262000) "./" "../" "anubi_old/")
+
+ ("/home/" (25064 64842 626171 222000) "anubi/" "root/" "./" "../" "lasgol/" "avjt/" "config.bak/" "anubi_old/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

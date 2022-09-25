@@ -11,6 +11,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'chentau/marks.nvim'
+Plug 'norcalli/nvim-terminal.lua'
 
 call plug#end()
 
