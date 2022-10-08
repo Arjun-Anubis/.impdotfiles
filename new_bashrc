@@ -15,6 +15,16 @@ HISTFILESIZE=2000
 
 
 
+export FZF_DEFAULT_COMMAND="ag --hidden --ignore .git --ignore .fonts -f -g \"\""
+export FZF_DEFAULT_OPTS="--border"
+
+
+
+
+
+
+
+
 
 bind -x '"\C-l":clear'
 #Something to do with less
@@ -109,7 +119,6 @@ fi
 export WINEDEBUG="-all"
 export EDITOR=vim
 export VISUAL=vim
-export FZF_DEFAULT_COMMAND="ag --hidden --ignore .git --ignore .fonts -f -g \"\""
 
 # xrdb -merge ~/.Xresources
 . "$HOME/.cargo/env"
@@ -121,3 +130,4 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 bind Space:magic-space
 figlet Welcome | lolcat
 export PATH=$PATH:/home/anubi/.spicetify
+HISTTIMEFORMAT="%F %T "        # for e.g. “1999-02-29 23:59:59”
