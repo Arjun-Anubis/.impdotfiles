@@ -109,7 +109,7 @@ bindsym $mod+m exec rofimoji -f emojis math -a clipboard
 #Shortcuts to dropdowns
 
 # bindsym $alt+shift+q exec tdrop -ma  -x 0 -y 0 -w 100% -h 50%  "jupyter qtconsole"
-bindsym $alt+Tab     exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 3    urxvt
+bindsym $alt+Tab     exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 3    kitty
 # bindsym $alt+shift+e exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 1    emacsclient --create-frame
 bindsym $alt+shift+q exec i3dropdown -F -H 60 math "jupyter qtconsole" 
 # bindsym $alt+Tab exec i3dropdown -F -H 60 ddterminal "kitty --name ddterminal" 

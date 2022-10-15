@@ -59,7 +59,7 @@ alias tv="kitty +kitten icat"
 alias remake="make clean && make"
 alias dl="cd ~/temp/whatsapp_local/download/"
 alias graph="manimgl /home/anubi/math_proofs/graph.py"
-
+alias vi="nvim"
 
 
 alias qusr="cd ~/.local/share/qutebrowser/userscripts/"
@@ -129,5 +129,6 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 # source ~/.local/share/blesh/ble.sh
 bind Space:magic-space
 figlet Welcome | lolcat
+eval "$(zoxide init bash)"
 export PATH=$PATH:/home/anubi/.spicetify
 HISTTIMEFORMAT="%F %T "        # for e.g. “1999-02-29 23:59:59”

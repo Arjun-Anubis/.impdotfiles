@@ -12,6 +12,10 @@ Plug 'preservim/nerdtree'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'chentau/marks.nvim'
 Plug 'norcalli/nvim-terminal.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
+
 
 call plug#end()
 
