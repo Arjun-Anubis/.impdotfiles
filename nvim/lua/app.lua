@@ -11,9 +11,10 @@ hi clear SignColumn
 
 vim.cmd([[
 set guifont=JetBrains\ Mono:h9
+colorscheme carbonfox
 if exists("g:neovide")
-	colorscheme carbonfox
-	set pb=50
+	set pumblend=50
+	set winblend=20
 endif
 ]])
 -- Todo, different colour for selected search and inc search, also no vim.cmd

@@ -16,6 +16,11 @@ vim.g.mapleader = " "
 
 -- Emacs Mappings
 
+-- Terminal mappings --
+-- vim.keymap.set( "t", "jj", "", {} )
+vim.cmd([[
+tnoremap jj <C-\><C-n>
+]])
 nmap( "<C-a>", "<Home>" )
 imap( "<C-a>", "<Home>" )
 nmap( "<C-e>", "<End>" )
@@ -42,7 +47,7 @@ nmap( "<C-l>", "<C-w>l" )
 nmap( "<leader>w", "<C-w>" )
 nmap( "<leader>v", ":vsplit" )
 nmap( "<leader>s", ":split" )
--- vim.keymap.set( "n", "<leader>cd", function () vim.fn["zoxide#z"]("cd") end, {})
+-- Too hard to do in lua
 vim.cmd([[
 nnoremap <Leader>cd :Z 
 ]])
@@ -52,15 +57,26 @@ nnoremap <Leader>cd :Z
 --Quick Access files
 
 vim.cmd([[ 
+" Open i3
 nnoremap <Leader>fi :edit ~/.config/i3/config<CR>
+
+" open virmc
 nnoremap <Leader>fv :edit ~/.vimrc<CR>
+
 nnoremap <Leader>fl :edit ~/.vim/ld.vim<CR>
+
 nnoremap <Leader>fe :edit ~/.emacs.d/init.el<CR>
+
 nnoremap <Leader>fz :edit ~/.config/zathura/zathurarc<CR>
+
 nnoremap <Leader>fn :edit ~/.config/nvim/init.vim<CR>
+
 nnoremap <Leader>fq :edit ~/.config/qutebrowser/config.py<CR>
+
 nnoremap <Leader>fd :edit ~/.config/dunst/dunstrc<CR>
+
 nnoremap <Leader>fb :edit ~/.bashrc<CR>
+
 nnoremap <Leader>fs :edit ~/.config/sway/config<CR>
 ]])
 

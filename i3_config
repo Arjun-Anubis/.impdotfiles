@@ -46,7 +46,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 
-# bindsym $alt+Tab [con_id="__focused__"] kill
 
 #Moving window to workspace
 
@@ -60,8 +59,6 @@ bindsym $mod+shift+7 move container to workspace number $ws7
 bindsym $mod+shift+8 move container to workspace number $ws8
 bindsym $mod+shift+9 move container to workspace number $ws9
 
-bindsym $mod+shift+Escape move container to workspace "banished"
-# bindsym $alt+shift+q move scratchpad
 
 #Focusing windows
 
@@ -84,17 +81,16 @@ bindsym $mod+shift+l move right
 
 #Terminal
 
-# bindsym $mod+Return exec gnome-terminal -- tmux -u
 bindsym $mod+Return exec kitty
-bindsym ctrl+$alt+t exec kitty 
 
 #Launcher
 
-bindsym $alt+space exec dmenu_run -b -l 35
+# bindsym $alt+space exec dmenu_run -b -l 35
+bindsym $alt+space exec dmenu_extended_run -b -l 35
 
-#FZF
+# ROFI
 
-# bindsym $mod+space exec gnome-terminal --full-screen -- bash -i nfin
+# Add Bluetooth
 bindsym $mod+space exec rofi -modi window -show window
 
 #Shortcuts to some programs
@@ -102,57 +98,51 @@ bindsym $mod+space exec rofi -modi window -show window
 bindsym $mod+shift+a exec whatsapp
 bindsym $mod+shift+d exec simple-scan
 bindsym $alt+shift+w exec qutebrowser
-bindsym $mod+shift+Return exec qutebrowser
 bindsym $mod+e exec emacs
 bindsym $mod+m exec rofimoji -f emojis math -a clipboard
 
 #Shortcuts to dropdowns
 
-# bindsym $alt+shift+q exec tdrop -ma  -x 0 -y 0 -w 100% -h 50%  "jupyter qtconsole"
+# tdrop( Rough, but functional
+bindsym $alt+shift+q exec tdrop -ma  -x 0 -y 0 -w 100% -h 50%  "jupyter qtconsole"
 bindsym $alt+Tab     exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 3    kitty
 # bindsym $alt+shift+e exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 1    emacsclient --create-frame
-bindsym $alt+shift+q exec i3dropdown -F -H 60 math "jupyter qtconsole" 
-# bindsym $alt+Tab exec i3dropdown -F -H 60 ddterminal "kitty --name ddterminal" 
-bindsym $alt+Shift+e exec i3dropdown -F -H 60 music "kitty --name music ncmpcpp" 
 # bindsym $alt+shift+r exec tdrop -ma  -x 12% -y 0 -w 75% -h 100% -n 1  zathura
 # bindsym $alt+shift+q exec tdrop -x 25% -y 10% -w 50% -h 50% -s trans urxvt
 
-#G keys
 
-bindsym Shift+F1 exec gnome-terminal
+# i3dropdown( smooth animations )
+# bindsym $alt+shift+q exec i3dropdown -F -H 60 math "jupyter qtconsole" 
+# bindsym $alt+Tab exec i3dropdown -F -H 60 ddterminal "kitty --name ddterminal" 
+# bindsym $alt+Shift+e exec i3dropdown -F -H 60 music "kitty --name music ncmpcpp" 
+
+
+# Bar controls
+bindsym $mod+Tab exec polybar-msg cmd toggle
 
 #Pulse Audio controls
-
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym ctrl+$alt+m exec mute-teams.sh mute
-bindsym ctrl+$alt+h exec mute-teams.sh hand
-bindsym ctrl+$alt+o exec mute-teams.sh video
-bindsym ctrl+$alt+l exec mute-teams.sh leave
-bindsym mod2+KP_0 exec mute-teams.sh mute
-# bindsym mod2+KP_ADD exec mute-teams.sh hand
-# bindsym ctrl+$alt+o exec mute-teams.sh video
 
-#Notifications
-
-bindsym $mod+Shift+n exec dunstctl history-pop
-
-
-bindsym $mod+n exec dunstctl close
-bindsym $mod+c exec dunstctl close-all
-bindsym $mod+Shift+p exec dunstctl set-pause
-
-#mopidy/mpd controls
-
-# bindsym XF86AudioPlayPause exec mpc toggle
-# bindsym XF86AudioPause exec mpc pause
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioStop exec mpc stop
 
-# bindsym KP_SUBTRACT exec kitty
+# mute-teams
+
+bindsym ctrl+$alt+m exec mute-teams.sh mute
+bindsym ctrl+$alt+h exec mute-teams.sh hand
+bindsym ctrl+$alt+o exec mute-teams.sh video
+bindsym ctrl+$alt+l exec mute-teams.sh leave
+bindsym mod2+KP_0 exec mute-teams.sh mute
+
+#Notifications
+bindsym $mod+Shift+n exec dunstctl history-pop
+bindsym $mod+n exec dunstctl close
+bindsym $mod+c exec dunstctl close-all
+bindsym $mod+Shift+p exec dunstctl set-pause
 
 #screenshot
 
@@ -160,9 +150,6 @@ bindsym $mod+shift+s exec ~/.local/bin/ss portion
 bindsym $alt+shift+s exec ~/.local/bin/ss 
 
 
-#LookSelector
-
-bindsym $mod+$alt+l exec rofi -show look -modi look:/usr/share/rofi/modi/look-selector.sh
 
 #Interacting with windows
 
@@ -170,11 +157,9 @@ bindsym $mod+shift+q [con_id="__focused__"] kill
 bindsym $mod+$alt+q [con_id="__focused__"] exec --no-startup-id kill -9 $(xdotool getwindowfocus getwindowpid)
 
 #Reload
-
 bindsym $mod+shift+r restart
 
 #Keyboard Layout
-
 bindsym $mod+$alt+Escape exec setxkbmap us
 bindsym $mod+$alt+Tab exec setxkbmap in hin-kagapa
 
@@ -239,45 +224,33 @@ floating_modifier $mod
 workspace_layout default
 
 #Apperance
-
 hide_edge_borders smart
-
 gaps inner 0
 gaps outer 0
-
 smart_gaps on
-
 default_border pixel 1
 default_floating_border pixel 1
-client.focused              #353439 #9FEE00 #7B9F35
-
+client.focused #353439 #9FEE00 #7B9F35
 popup_during_fullscreen smart
 
 focus_follows_mouse yes
-
-font pango:Source Code Pro Medium 9
+font pango:Jet Brains Mono 9
 font pango:Mangal Regular 9
 
 #StartUp
-
-# exec_always ~/.config/polybar/launch.sh --hack
-
-exec_always --no-startup-id ~/polybar-collection/themes/gruvbox/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id polybar-msg cmd toggle
 exec_always --no-startup-id ~/.config/i3/.script
 exec_always --no-startup-id dunst --startup_notification
-exec_always --no-startup-id thunderbird
-
-#exec_always feh --bg ~/.fehbg
-# exec_always --no-startup-id /usr/share/regolith-compositor/init
-# exec --no-startup-id /usr/bin/rotification-daemon
-# exec_always --no-startup-id bg_reset
 exec_always --no-startup-id feh --bg-scale ~/bg.png
 exec_always --no-startup-id dbus-update-activation-environment --systemd --all
-exec --no-startup-id systemctl --user restart mopidy
+exec_always --no-startup-id numlockx on 
+## This is hacky
 exec --no-startup-id i3 --get-socketpath > /tmp/i3wm-socket-path 
 
 
 # Startup
+exec thunderbird
 exec discord 
 exec qutebrowser --qt-arg name main_browser
 exec whatsapp 
@@ -285,9 +258,7 @@ exec obsidian
 exec spotify
 exec gimp
 exec kitty --name Core
-exec kitty --name music ncmpcpp
 exec kitty --name ddterminal 
-exec_always --no-startup-id numlockx on 
 
 for_window [title=".*Main Browser"]  move workspace number $ws3
 for_window [title=".*Social"]  move workspace number $ws2
@@ -302,9 +273,3 @@ for_window [class="floating"] floating enable
 assign [class="thunderbird"] $ws6
 
 
-
-
-mode "emacs_only" {
-	bindsym $mod+1 mode "default"
-}
-# for_window [class="Emacs"] mode "emacs_only"

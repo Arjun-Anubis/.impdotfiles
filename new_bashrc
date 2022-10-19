@@ -40,7 +40,7 @@ alias dapt='doas apt'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -alF'
-alias la='ls -A'
+alias la='ls -a'
 alias l='ls -l'
 alias cpv='rsync -ah --info=progress2'
 alias m='ncmpcpp -q'
@@ -67,6 +67,7 @@ alias sc="cd school"
 # alias rec="arecord -r 16000"
 alias vedit="sox"
 alias serva="python3.11 -m http.server"
+alias neovide="~/.cargo/bin/neovide --multigrid"
 
 # alias graph='manimgl ~/math_proofs/graph.py'
 
