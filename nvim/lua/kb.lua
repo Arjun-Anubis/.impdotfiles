@@ -61,9 +61,8 @@ vim.cmd([[
 nnoremap <Leader>fi :edit ~/.config/i3/config<CR>
 
 " open virmc
-nnoremap <Leader>fv :edit ~/.vimrc<CR>
+nnoremap <Leader>fv :Z nvim<CR>
 
-nnoremap <Leader>fl :edit ~/.vim/ld.vim<CR>
 
 nnoremap <Leader>fe :edit ~/.emacs.d/init.el<CR>
 

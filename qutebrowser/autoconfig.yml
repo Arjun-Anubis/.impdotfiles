@@ -110,8 +110,10 @@ settings:
     global: top
   tabs.show:
     global: multiple
+  tabs.tabs_are_windows:
+    global: false
   tabs.width:
-    global: 15%
+    global: 3%
   url.default_page:
     global: about:blank
   url.searchengines:

@@ -85,8 +85,8 @@ bindsym $mod+Return exec kitty
 
 #Launcher
 
-# bindsym $alt+space exec dmenu_run -b -l 35
-bindsym $alt+space exec dmenu_extended_run -b -l 35
+bindsym $alt+space exec dmenu_run -b -l 35
+# bindsym $alt+space exec dmenu_extended_run -b -l 35
 
 # ROFI
 
@@ -104,16 +104,16 @@ bindsym $mod+m exec rofimoji -f emojis math -a clipboard
 #Shortcuts to dropdowns
 
 # tdrop( Rough, but functional
-bindsym $alt+shift+q exec tdrop -ma  -x 0 -y 0 -w 100% -h 50%  "jupyter qtconsole"
-bindsym $alt+Tab     exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 3    kitty
+# bindsym $alt+shift+q exec tdrop -ma  -x 0 -y 0 -w 100% -h 50%  "jupyter qtconsole"
+# bindsym $alt+Tab     exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 3    kitty
 # bindsym $alt+shift+e exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 1    emacsclient --create-frame
 # bindsym $alt+shift+r exec tdrop -ma  -x 12% -y 0 -w 75% -h 100% -n 1  zathura
 # bindsym $alt+shift+q exec tdrop -x 25% -y 10% -w 50% -h 50% -s trans urxvt
 
 
 # i3dropdown( smooth animations )
-# bindsym $alt+shift+q exec i3dropdown -F -H 60 math "jupyter qtconsole" 
-# bindsym $alt+Tab exec i3dropdown -F -H 60 ddterminal "kitty --name ddterminal" 
+bindsym $alt+shift+q exec i3dropdown -F -H 60 math "jupyter qtconsole" 
+bindsym $alt+Tab exec i3dropdown -F -H 60 ddterminal "kitty --name ddterminal" 
 # bindsym $alt+Shift+e exec i3dropdown -F -H 60 music "kitty --name music ncmpcpp" 
 
 
@@ -192,6 +192,7 @@ bindsym $mod+f fullscreen toggle
 for_window [class="floating_window"] floating enable
 for_window [instance="ddterminal"] floating enable
 for_window [instance="ddterminal"] focus
+for_window [instance="ddterminal"] sticky enable
 bindsym $mod+Shift+space floating toggle
 
 #Resize mode
@@ -239,7 +240,6 @@ font pango:Mangal Regular 9
 
 #StartUp
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id polybar-msg cmd toggle
 exec_always --no-startup-id ~/.config/i3/.script
 exec_always --no-startup-id dunst --startup_notification
 exec_always --no-startup-id feh --bg-scale ~/bg.png
@@ -250,7 +250,7 @@ exec --no-startup-id i3 --get-socketpath > /tmp/i3wm-socket-path
 
 
 # Startup
-exec thunderbird
+exec mailspring
 exec discord 
 exec qutebrowser --qt-arg name main_browser
 exec whatsapp 
@@ -260,16 +260,16 @@ exec gimp
 exec kitty --name Core
 exec kitty --name ddterminal 
 
-for_window [title=".*Main Browser"]  move workspace number $ws3
-for_window [title=".*Social"]  move workspace number $ws2
-for_window [class="audacity"]  move workspace number $ws8
-for_window [class="Gimp"]  move workspace number $ws9
-for_window [class="obsidian"] move workspace number $ws4
-for_window [class="discord"] move workspace number $ws5
-for_window [class="Spotify"] move workspace number $ws7
+for_window [title=".*Main Browser"]  move to workspace number $ws3
+for_window [title=".*Social"]  move to workspace number $ws2
+for_window [class="audacity"]  move to workspace number $ws8
+for_window [class="Gimp"]  move to workspace number $ws9
+for_window [class="obsidian"] move to workspace number $ws4
+for_window [class="discord"] move to workspace number $ws5
+for_window [class="Spotify"] move to workspace number $ws7
+for_window [class="Mailspring"] move to workspace number $ws6
 for_window [instance="ddterminal"] move to scratchpad
 for_window [instance="music"] move to scratchpad
 for_window [class="floating"] floating enable	
-assign [class="thunderbird"] $ws6
 
 
