@@ -1,281 +1,200 @@
-#Setting mod and alt 
+# Modifiers
 set $mod Mod4
 set $alt Mod1
-
-
-input "type:keyboard" {
-    xkb_options caps:escape
-}  
-  
-#Defining workspaces
-
-set $ws9 "9:Images"
-set $ws8 "8:Audacity"
-set $ws7 "7:Music"
-set $ws6 "6:Mail"
-set $ws5 "5:Discord"
-set $ws4 "4:Obsidian"
-set $ws3 "3:Browser"
-set $ws2 "2:Social"
-set $ws1 "1:Playground"
-
-#Moving to workspaces
-#
-
-#Some keypad keys
-
-bindsym KP_Divide \
-    exec playerctl -p spotify previous
-bindsym KP_Multiply \
-    exec playerctl -p spotify play-pause
-bindsym KP_Subtract \
-    exec playerctl -p spotify next
-
-
-bindsym mod2+KP_1 workspace number $ws1
-bindsym mod2+KP_2 workspace number $ws2
-bindsym mod2+KP_3 workspace number $ws3
-bindsym mod2+KP_4 workspace number $ws4
-bindsym mod2+KP_5 workspace number $ws5
-bindsym mod2+KP_6 workspace number $ws6
-bindsym mod2+KP_7 workspace number $ws7
-bindsym mod2+KP_8 workspace number $ws8
-bindsym mod2+KP_9 workspace number $ws9
-
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-
-
-#Moving window to workspace
-
-bindsym $mod+shift+1 move container to workspace number $ws1
-bindsym $mod+shift+2 move container to workspace number $ws2
-bindsym $mod+shift+3 move container to workspace number $ws3
-bindsym $mod+shift+4 move container to workspace number $ws4
-bindsym $mod+shift+5 move container to workspace number $ws5
-bindsym $mod+shift+6 move container to workspace number $ws6
-bindsym $mod+shift+7 move container to workspace number $ws7
-bindsym $mod+shift+8 move container to workspace number $ws8
-bindsym $mod+shift+9 move container to workspace number $ws9
-
-
-#Focusing windows
-
-bindsym $mod+Up focus up
-bindsym $mod+Down focus down
-bindsym $mod+Left focus left
-bindsym $mod+Right focus right
-
-bindsym $mod+k focus up
-bindsym $mod+j focus down
-bindsym $mod+h focus left
-bindsym $mod+l focus right
-
-#Moving windows
-
-bindsym $mod+shift+k move up
-bindsym $mod+shift+j move down
-bindsym $mod+shift+h move left
-bindsym $mod+shift+l move right
-
-#Terminal
-
-bindsym $mod+Return exec kitty
-
-#Launcher
-
-# bindsym $alt+space exec dmenu_run -b -l 35
-bindsym $alt+space exec dmenu_extended_run -b -l 35
-
-# ROFI
-
-# Add Bluetooth
-bindsym $mod+space exec rofi -modi window -show window
-
-#Shortcuts to some programs
-
-bindsym $mod+shift+a exec whatsapp
-bindsym $mod+shift+d exec simple-scan
-bindsym $alt+shift+w exec qutebrowser
-bindsym $mod+e exec emacs
-bindsym $mod+m exec rofimoji -f emojis math -a clipboard
-
-#Shortcuts to dropdowns
-
-# tdrop( Rough, but functional
-# bindsym $alt+shift+q exec tdrop -ma  -x 0 -y 0 -w 100% -h 50%  "jupyter qtconsole"
-# bindsym $alt+Tab     exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 3    kitty
-# bindsym $alt+shift+e exec tdrop -ma  -x 0 -y 0 -w 100% -h 50% -n 1    emacsclient --create-frame
-# bindsym $alt+shift+r exec tdrop -ma  -x 12% -y 0 -w 75% -h 100% -n 1  zathura
-# bindsym $alt+shift+q exec tdrop -x 25% -y 10% -w 50% -h 50% -s trans urxvt
-
-
-# i3dropdown( smooth animations )
-bindsym $alt+shift+q exec i3dropdown -F -H 60 math "jupyter qtconsole" 
-bindsym $alt+Tab exec i3dropdown -F -H 60 ddterminal "kitty --name ddterminal" 
-# bindsym $alt+Shift+e exec i3dropdown -F -H 60 music "kitty --name music ncmpcpp" 
-
-
-# Bar controls
-bindsym $mod+Tab exec polybar-msg cmd toggle
-
-#Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioStop exec mpc stop
-
-# mute-teams
-
-bindsym ctrl+$alt+m exec mute-teams.sh mute
-bindsym ctrl+$alt+h exec mute-teams.sh hand
-bindsym ctrl+$alt+o exec mute-teams.sh video
-bindsym ctrl+$alt+l exec mute-teams.sh leave
-bindsym mod2+KP_0 exec mute-teams.sh mute
-
-#Notifications
-bindsym $mod+Shift+n exec dunstctl history-pop
-bindsym $mod+n exec dunstctl close
-bindsym $mod+c exec dunstctl close-all
-bindsym $mod+Shift+p exec dunstctl set-pause
-
-#screenshot
-
-bindsym $mod+shift+s exec ~/.local/bin/ss portion
-bindsym $alt+shift+s exec ~/.local/bin/ss 
-
-
-
-#Interacting with windows
-
-bindsym $mod+shift+q [con_id="__focused__"] kill
-bindsym $mod+$alt+q [con_id="__focused__"] exec --no-startup-id kill -9 $(xdotool getwindowfocus getwindowpid)
-
-#Reload
-bindsym $mod+shift+r restart
-
-#Keyboard Layout
-bindsym $mod+$alt+Escape exec setxkbmap us
-bindsym $mod+$alt+Tab exec setxkbmap in hin-kagapa
-
-#Logout
-
-bindsym $mod+shift+e exec i3-msg exit
-
-#Reboot
-
-bindsym ctrl+$alt+Delete exec reboot
-
-#Poweroff
-
-bindsym ctrl+$alt+shift+Delete exec poweroff
-
-#Lock
-
-
-#Orientation
-
-bindsym $mod+v split vertical
-bindsym $mod+g split horizontal
-
-#Fullscreen
-
-bindsym $mod+f fullscreen toggle
-
-#Floating windows should float
-
-for_window [class="floating_window"] floating enable
-for_window [instance="ddterminal"] floating enable
-for_window [instance="ddterminal"] focus
-for_window [instance="ddterminal"] sticky enable
-bindsym $mod+Shift+space floating toggle
-
-#Resize mode
-
-mode "resize" {
-	#Resize 
-        bindsym h resize shrink width 6 px or 6 ppt
-        bindsym j resize shrink height 6 px or 6 ppt
-        bindsym k resize grow height 6 px or 6 ppt
-        bindsym l resize grow width 6 px or 6 ppt
-
-        #Resize with arrows
-        bindsym Left resize shrink width 6 px or 6 ppt
-        bindsym Down resize grow height 6 px or 6 ppt
-        bindsym Up resize shrink height 6 px or 6 ppt
-        bindsym Right resize grow width 6 px or 6 ppt
-
-	#Quitting resize mode
-	bindsym Escape mode "default"
-	bindsym Return mode "default"
-
-}
-
-bindsym $mod+r mode "resize"
-
-
-#Setting a few defaults
 
 floating_modifier $mod
 workspace_layout default
 
-#Apperance
-hide_edge_borders smart
+# Appearance
 gaps inner 0
 gaps outer 0
 smart_gaps on
-default_border pixel 1
-default_floating_border pixel 1
-client.focused #353439 #9FEE00 #7B9F35
+
+hide_edge_borders smart
 popup_during_fullscreen smart
 
+default_border pixel 1
+default_floating_border pixel 1
+
+client.focused #353439 #9FEE00 #7B9F35
 focus_follows_mouse yes
+
 font pango:Jet Brains Mono 9
 font pango:Mangal Regular 9
 
-#StartUp
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id ~/.config/i3/.script
-exec_always --no-startup-id dunst --startup_notification
-exec_always --no-startup-id feh --bg-scale ~/bg.png
-exec_always --no-startup-id dbus-update-activation-environment --systemd --all
-exec_always --no-startup-id numlockx on 
-## This is hacky
-exec --no-startup-id i3 --get-socketpath > /tmp/i3wm-socket-path 
+input "type:keyboard" {
+    xkb_options caps:escape
+	xkb_layout us
+}  
+  
+# Workspaces
+set {
+	$ws9 "9:Images"
+	$ws8 "8:Audacity"
+	$ws7 "7:Music"
+	$ws6 "6:Mail"
+	$ws5 "5:Discord"
+	$ws4 "4:Obsidian"
+	$ws3 "3:Browser"
+	$ws2 "2:Social"
+	$ws1 "1:Playground"
+}
+
+bindsym {
+	# Workspace via keypad
+	mod2+KP_1 workspace number $ws1
+	mod2+KP_2 workspace number $ws2
+	mod2+KP_3 workspace number $ws3
+	mod2+KP_4 workspace number $ws4
+	mod2+KP_5 workspace number $ws5
+	mod2+KP_6 workspace number $ws6
+	mod2+KP_7 workspace number $ws7
+	mod2+KP_8 workspace number $ws8
+	mod2+KP_9 workspace number $ws9
+
+	# Workspace via Win + number
+	$mod+1 workspace number $ws1
+	$mod+2 workspace number $ws2
+	$mod+3 workspace number $ws3
+	$mod+4 workspace number $ws4
+	$mod+5 workspace number $ws5
+	$mod+6 workspace number $ws6
+	$mod+7 workspace number $ws7
+	$mod+8 workspace number $ws8
+	$mod+9 workspace number $ws9
+
+	# Move container to workspace throught Win + Shift + Number
+	$mod+shift+1 move container to workspace number $ws1
+	$mod+shift+2 move container to workspace number $ws2
+	$mod+shift+3 move container to workspace number $ws3
+	$mod+shift+4 move container to workspace number $ws4
+	$mod+shift+5 move container to workspace number $ws5
+	$mod+shift+6 move container to workspace number $ws6
+	$mod+shift+7 move container to workspace number $ws7
+	$mod+shift+8 move container to workspace number $ws8
+	$mod+shift+9 move container to workspace number $ws9
 
 
-# Startup
-exec mailspring
-exec discord 
-exec qutebrowser --qt-arg name main_browser
-exec whatsapp 
-exec obsidian 
-exec spotify
-exec gimp
-exec kitty --name Core
-exec kitty --name ddterminal 
+	# Focus window with Win + h,j,k,l
+	$mod+k focus up
+	$mod+j focus down
+	$mod+h focus left
+	$mod+l focus right
 
-for_window [title=".*Main Browser"]  move to workspace number $ws3
-for_window [title=".*Social"]  move to workspace number $ws2
-for_window [class="audacity"]  move to workspace number $ws8
-for_window [class="Gimp"]  move to workspace number $ws9
-for_window [class="obsidian"] move to workspace number $ws4
-for_window [class="discord"] move to workspace number $ws5
-for_window [class="Spotify"] move to workspace number $ws7
-for_window [class="Mailspring"] move to workspace number $ws6
-for_window [instance="ddterminal"] move to scratchpad
-for_window [instance="music"] move to scratchpad
-for_window [class="floating"] floating enable	
+	# Move windows with Win + Shift + h,j,k,l
+	$mod+shift+k move up
+	$mod+shift+j move down
+	$mod+shift+h move left
+	$mod+shift+l move right
+
+	# Orientation, Fullscreen, Floating
+	$mod+v split vertical
+	$mod+g split horizontal
+	$mod+f fullscreen toggle
+	$mod+Shift+space floating toggle
+
+	# Core necessities
+	$mod+Return exec kitty
+	$alt+space exec dmenu_extended_run -b -l 35
+
+	# Window Close, Force close
+	$mod+shift+q [con_id="__focused__"] kill
+	$mod+$alt+q [con_id="__focused__"] exec --no-startup-id kill -9 $(xdotool getwindowfocus getwindowpid)
+
+	# Reload(not working), Exit
+	$mod+shift+r restart
+	$mod+shift+e exec swaymsg exit
+
+	# Power
+	ctrl+$alt+Delete       exec reboot
+	ctrl+$alt+shift+Delete exec poweroff
+
+	# Audio
+	XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +5% 
+	XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -5%
+	XF86AudioMute        exec pactl set-sink-mute 0 toggle
+
+	XF86AudioPlay exec mpc toggle
+	XF86AudioNext exec mpc next
+	XF86AudioPrev exec mpc prev
+	XF86AudioStop exec mpc stop
+
+	KP_Divide  exec playerctl -p spotify previous
+	KP_Multiply  exec playerctl -p spotify play-pause
+	KP_Subtract  exec playerctl -p spotify next
+
+	#----------------------------------------------------------------------------------------------------------#
+	#--------------------------End of necessities--------------------------------------------------------------#
+	#----------------------------------------------------------------------------------------------------------#
+
+	# ROFI Scripts
+	$mod+b exec rofi-bluetooth
+	$mod+m exec rofimoji -f emojis math -a clipboard
+
+	# Browsers
+	$alt+shift+w exec qutebrowser
+	$mod+shift+a exec qutebrowser -B ~/qutebrowser_environments/whatsapp_local/ --config-py ~/.config/qutebrowser/config.py
+
+	# Misc programs
+	$mod+shift+d exec simple-scan
+	$mod+shift+v exec nvide
+ 
+	# Dropdowns
+	# tdrop( Rough, but functional )
+	$alt+Tab     exec tdrop -ma  -x 0   -y 0 -w 100% -h 50% -n 3 kitty
+	$alt+shift+r exec tdrop -ma  -x 12% -y 0 -w 75% -h 100% -n 1 zathura
+
+	# Widgets
+	$mod+Tab exec eww open bars
+
+	# Notifications
+	$mod+Shift+n exec dunstctl history-pop
+	$mod+Shift+p exec dunstctl set-pause
+	$mod+n exec dunstctl close
+	$mod+c exec dunstctl close-all
+
+	# Screenshot
+	$mod+shift+s exec ~/.local/bin/ss portion
+	$alt+shift+s exec ~/.local/bin/ss 
+
+}
 
 
+# Execute on Reload
+exec_always --no-startup-id {
+	dunst --startup_notification
+	dbus-update-activation-environment --systemd --all
+}
+
+# Startup Applications
+exec {
+	mailspring
+	discord 
+	qutebrowser --qt-arg name main_browser
+	qutebrowser -B ~/qutebrowser_environments/whatsapp_local/ --config-py ~/.config/qutebrowser/config.py web.whatsapp.com
+	obsidian 
+	spotify
+	gimp
+	kitty --name Core
+	kitty --name ddterminal 
+}
+
+for_window {
+	[class="floating_window"] floating enable
+	[class="floating"] floating enable	
+
+	[instance="ddterminal"] floating enable
+	[instance="ddterminal"] sticky enable
+	[instance="ddterminal"] focus
+
+	[title=".*Main Browser"]  move to workspace number $ws3
+	[title=".*Social"]  move to workspace number $ws2
+	[class="audacity"]  move to workspace number $ws8
+	[class="Gimp"]  move to workspace number $ws9
+	[class="obsidian"] move to workspace number $ws4
+	[class="discord"] move to workspace number $ws5
+	[class="Spotify"] move to workspace number $ws7
+	[class="Mailspring"] move to workspace number $ws6
+	[instance="ddterminal"] move to scratchpad
+	[instance="music"] move to scratchpad
+}
