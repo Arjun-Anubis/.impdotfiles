@@ -1,18 +1,18 @@
-
 (defpoll ctime
   :interval "1s"
   `date +"%A, %B the %dth, %Y %H:%M %Ss"`)
 
 (defwindow bars
+  :monitor 0
   :class "bars"
-  :window-type "bar"
+  ; :valign "center"
+  :geometry (geometry 
+                      :width "100%"
+                      :height "2%" 
+
+                      :anchor "top center")
   :stacking "fg"
-  :valign "center"
-  :geometry (geometry :x "0" 
-                      :y "0" 
-                      :height "30px") 
-  :reserve (struts :distance "30px" :side "top")
-  :anchor "top left"
+
   (main_bar))
 
 (defwidget main_bar []
@@ -21,7 +21,7 @@
       :halign "start"
       ; (title_bar)
       (workspaces)
-      (spacer)
+      ; (spacer)
       (time))
     (box
       ; :style "background-color: #ffffff"
@@ -38,8 +38,8 @@
     :space-evenly false
     :halign "start"
 
-    :onhover "eww update is_workspaces=true"
-    :onhoverlost "eww update is_workspaces=false"
+    :onhover "${EWW_CMD} update is_workspaces=true"
+    :onhoverlost "${EWW_CMD} update is_workspaces=false"
     (box
       (box 
         (revealer
@@ -48,8 +48,8 @@
           :transition "slideright"
           :duration "200ms"
           (eventbox
-            :onhover "eww update is_ws_switcher=true"
-            :onhoverlost "eww update is_ws_switcher=false"
+            :onhover "${EWW_CMD} update is_ws_switcher=true"
+            :onhoverlost "${EWW_CMD} update is_ws_switcher=false"
 
             (revealer
               :reveal is_ws_switcher
@@ -81,8 +81,8 @@
 
 (defwidget music []
   (eventbox
-    :onhover "eww update is_controls=true"
-    :onhoverlost "eww update is_controls=false"
+    :onhover "${EWW_CMD} update is_controls=true"
+    :onhoverlost "${EWW_CMD} update is_controls=false"
     :onclick "i3-msg workspace number '7:Music'"
     (box
       (box
@@ -141,7 +141,7 @@
     (eventbox
       :halign "end"
       :onclick "kitty"
-      :onhover "eww update is_volume=true"
+      :onhover "${EWW_CMD} update is_volume=true"
       :class "volume-icon"
       " ")
     (revealer
@@ -152,7 +152,7 @@
       :duration "200ms"
       (eventbox
         :halign "end"
-        :onhoverlost "eww update is_volume=false"
+        :onhoverlost "${EWW_CMD} update is_volume=false"
         (scale
           :flipped true
           :class "volbar"
@@ -167,7 +167,7 @@
     :halign "end"
     (eventbox
       :halign "end"
-      :onhover "eww update is_output=true"
+      :onhover "${EWW_CMD} update is_output=true"
       :class "output-icon"
       "${current-output-icon} ")
     (revealer
@@ -177,7 +177,7 @@
       :duration "200ms"
       (eventbox
         :halign "end"
-        :onhoverlost "eww update is_output=false"
+        :onhoverlost "${EWW_CMD} update is_output=false"
         :tooltip "Output sink is ${current-output}"
         (box
           :halign "end"

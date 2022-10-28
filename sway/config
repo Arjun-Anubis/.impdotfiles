@@ -30,7 +30,7 @@ input "type:keyboard" {
 # Workspaces
 set {
 	$ws9 "9:Images"
-	$ws8 "8:Audacity"
+	$ws8 "8:Open"
 	$ws7 "7:Music"
 	$ws6 "6:Mail"
 	$ws5 "5:Discord"
@@ -95,7 +95,7 @@ bindsym {
 
 	# Core necessities
 	$mod+Return exec kitty
-	$alt+space exec dmenu_extended_run -b -l 35
+	$alt+space exec bemenu-run -b -l 40
 
 	# Window Close, Force close
 	$mod+shift+q [con_id="__focused__"] kill
@@ -145,7 +145,7 @@ bindsym {
 	$alt+shift+r exec tdrop -ma  -x 12% -y 0 -w 75% -h 100% -n 1 zathura
 
 	# Widgets
-	$mod+Tab exec eww open bars
+	$mod+Tab exec eww open bars --toggle
 
 	# Notifications
 	$mod+Shift+n exec dunstctl history-pop
@@ -162,6 +162,7 @@ bindsym {
 
 # Execute on Reload
 exec_always --no-startup-id {
+	autotiling
 	dunst --startup_notification
 	dbus-update-activation-environment --systemd --all
 }

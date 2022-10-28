@@ -22,10 +22,6 @@ export FZF_DEFAULT_OPTS="--border"
 
 
 
-
-
-
-
 bind -x '"\C-l":clear'
 #Something to do with less
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -50,7 +46,6 @@ alias ls='exa'
 alias notif="dunstify"
 alias notic="dunstify -u critical"
 alias notil="dunstify -u low"
-alias pup="pup -c"
 alias curl="curl -s"
 alias get="http"
 alias post="http post"
@@ -60,6 +55,7 @@ alias remake="make clean && make"
 alias dl="cd ~/temp/whatsapp_local/download/"
 alias graph="manimgl /home/anubi/math_proofs/graph.py"
 alias vi="nvim"
+alias pup="pup -c"
 
 
 alias qusr="cd ~/.local/share/qutebrowser/userscripts/"
@@ -126,9 +122,7 @@ export QT_QPA_PLATFORMTHEME='gnome'
 . "$HOME/.cargo/env"
 
 export WASMTIME_HOME="$HOME/.wasmtime"
-
 export PATH="$WASMTIME_HOME/bin:$PATH"
-# source ~/.local/share/blesh/ble.sh
 bind Space:magic-space
 figlet Welcome | lolcat
 eval "$(zoxide init bash)"
