@@ -1,3 +1,12 @@
+
+#  ____                        ____             __ _       
+# / ___|_      ____ _ _   _   / ___|___  _ __  / _(_) __ _ 
+# \___ \ \ /\ / / _` | | | | | |   / _ \| '_ \| |_| |/ _` |
+#  ___) \ V  V / (_| | |_| | | |__| (_) | | | |  _| | (_| |
+# |____/ \_/\_/ \__,_|\__, |  \____\___/|_| |_|_| |_|\__, |
+#                     |___/                          |___/ 
+
+
 # Modifiers
 set $mod Mod4
 set $alt Mod1
@@ -23,8 +32,9 @@ font pango:Jet Brains Mono 9
 font pango:Mangal Regular 9
 
 input "type:keyboard" {
-    xkb_options caps:escape
 	xkb_layout us
+    xkb_options caps:escape
+	xkb_numlock enabled
 }  
   
 # Workspaces
@@ -42,15 +52,15 @@ set {
 
 bindsym {
 	# Workspace via keypad
-	mod2+KP_1 workspace number $ws1
-	mod2+KP_2 workspace number $ws2
-	mod2+KP_3 workspace number $ws3
-	mod2+KP_4 workspace number $ws4
-	mod2+KP_5 workspace number $ws5
-	mod2+KP_6 workspace number $ws6
-	mod2+KP_7 workspace number $ws7
-	mod2+KP_8 workspace number $ws8
-	mod2+KP_9 workspace number $ws9
+	KP_1 workspace number $ws1
+	KP_2 workspace number $ws2
+	KP_3 workspace number $ws3
+	KP_4 workspace number $ws4
+	KP_5 workspace number $ws5
+	KP_6 workspace number $ws6
+	KP_7 workspace number $ws7
+	KP_8 workspace number $ws8
+	KP_9 workspace number $ws9
 
 	# Workspace via Win + number
 	$mod+1 workspace number $ws1
