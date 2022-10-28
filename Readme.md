@@ -19,3 +19,62 @@ The dotfiles are in a mess at the moment, this repo contains, some important one
 + zsh, under .zshrc -> ~
 + GTK, under .gtkrc-2.0 -> ~
 + Emacs, under .emacs.d -> ~
+
+
+## Proto Install Script
+
+### Essentials
+
++ i3/sway
+	+ polybar
+	+ eww
+	+ rofi
+	+ dmenu
+	+ i3-dropdown
+
++ kitty
+	+ tmux
+	+ bash
+	+ qalc
+	+ vifm
+
++ Neovim
+	+ fzf
+
++ Emacs
+
+### Utilities
+
++ Qutebrowser
++ Zathura
++ Mailspring
++ Obsidian
++ Thunar (optional)
++ mpv
++ wireshark
++ htop
+
+### Untech
+
++ Discord
++ Spotify
+
+### Libraries
+
++ Python
+	+ sympy
+	+ wpm
+	+ yt-dlp
+	+ meson
+	+ animdl
++ Rust
+	+ pup
++ Pipewire
++ ffmpeg
++ imagemagick
++ pandoc
+
+
+### Optionals
+
++ Glava
