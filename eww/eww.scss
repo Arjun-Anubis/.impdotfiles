@@ -1,0 +1,125 @@
+*{
+	all: unset;
+	// font-family: Jet Brains Mono;
+}
+
+$icon_size: 20px;
+$module_radius: 16px;
+$upper_padding: 0;
+$lower_padding: 0;
+$module_padding: $lower_padding 10px $upper_padding 10px;
+
+$background: #1A1B26;
+$secondary_background: #2E303E;
+$foreground: #A9B1D6;
+
+$black: #24283B;
+$gray: #565F89;
+$red: #F7768E;
+$green: #73DACA;
+$dark_green: #1DB954;
+$yellow: #E0AF68;
+$blue: #7AA2F7;
+$magenta: #BB9AF7;
+$cyan: #7DCFFF;
+$white: $foreground;
+
+$accent: $green;
+
+.spacer {
+	padding: $module_padding;
+}
+
+.bars {
+	border-radius: 16px;
+	// background-color: $black;
+	background-color: #161616;
+	// background-color: #2E303E;
+}
+
+.wime {
+	background-color: $secondary_background;
+	font-weight: bold;
+	border-radius: 16px;
+}
+
+.title {
+	background-color: $secondary_background;
+	font-weight: bold;
+	border-radius: 16px;
+}
+
+.ptext {
+	// font-family: "Font Awesome 6 Free";
+	font-family: "JetBrainsMono Nerd Font";
+	padding: $module_padding;
+}
+
+.music {
+	background-color: $secondary_background;
+	border-radius: $module_radius;
+	padding: $module_padding
+}
+
+.workspaces {
+	background-color: $secondary_background;
+	border-radius: $module_radius;
+	padding: $module_padding
+}
+
+.music-controls {
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: $icon_size;
+	padding: 0 5px 0 5px;
+	background-color: #458588;
+	border-radius: $module_radius;
+}
+ 
+.output-icon{
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: $icon_size;
+	margin: .2rem 0 .2rem 0;
+	color: $accent;
+}
+.volume-icon{
+	font-family: "Font Awesome 6 Free";
+	font-size: $icon_size;
+	margin: .2rem 0 .2rem 0;
+	color: $accent;
+}
+
+.music-icon{
+	font-family: "Font Awesome 6 Brands";
+	font-size: $icon_size;
+	margin: .2rem 0 .2rem 0;
+	color: $dark_green;
+}
+.workspace-icon{
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 30px;
+	margin: .2rem 0 .2rem 0;
+	color: $accent;
+}
+
+scale trough {
+  all: unset;
+  background-color: $secondary_background;
+  border-radius: 5px;
+  min-height: 25px;
+  min-width: 80px;
+  margin: .3rem 0 .3rem 0;
+}
+.bribar trough highlight {
+  background-color: $yellow;
+  border-radius: 5px;
+}
+.volbar trough highlight {
+  background-color: $accent;
+  border-radius: 5px;
+}
+
+.roption {
+	background-color: $secondary_background;
+	border-radius: $module_radius;
+	padding: 10px 10px 10px 10px;
+}

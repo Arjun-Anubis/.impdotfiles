@@ -1,0 +1,203 @@
+
+(defpoll ctime
+  :interval "1s"
+  `date +"%A, %B the %dth, %Y %H:%M %Ss"`)
+
+(defwindow bars
+  :class "bars"
+  :window-type "bar"
+  :stacking "fg"
+  :valign "center"
+  :geometry (geometry :x "0" 
+                      :y "0" 
+                      :height "30px") 
+  :reserve (struts :distance "30px" :side "top")
+  :anchor "top left"
+  (main_bar))
+
+(defwidget main_bar []
+  (box
+    (box
+      :halign "start"
+      ; (title_bar)
+      (workspaces)
+      (spacer)
+      (time))
+    (box
+      ; :style "background-color: #ffffff"
+      :spacing 0
+      :space-evenly false
+      :halign "end"
+      (music)
+      (output)
+      (wifi)
+      (volum))))
+
+(defwidget workspaces [] 
+  (eventbox
+    :space-evenly false
+    :halign "start"
+
+    :onhover "eww update is_workspaces=true"
+    :onhoverlost "eww update is_workspaces=false"
+    (box
+      (box 
+        (revealer
+          :class "workspaces"
+          :reveal is_workspaces
+          :transition "slideright"
+          :duration "200ms"
+          (eventbox
+            :onhover "eww update is_ws_switcher=true"
+            :onhoverlost "eww update is_ws_switcher=false"
+
+            (revealer
+              :reveal is_ws_switcher
+              :transtion "crossfade"
+              :duration "200ms"
+              (combo-box-text 
+                :items [ "a" "b" "c" "d"]
+                :timeout "50ms"
+                "something")))))
+                
+      (eventbox
+        :class "workspace-icon"
+        (box
+          :space-evenly false
+          "${current-workspace-icon}"
+          (box :class "spacer"))))))
+      
+      
+(defwidget title_bar []
+  (box
+    :class "title"
+    (box
+      :class "ptext"
+      "${current-focused-window}")))
+
+(defwidget spacer []
+  (box :class "spacer"))
+
+
+(defwidget music []
+  (eventbox
+    :onhover "eww update is_controls=true"
+    :onhoverlost "eww update is_controls=false"
+    :onclick "i3-msg workspace number '7:Music'"
+    (box
+      (box
+        :class "music"
+        :space-evenly false
+        (eventbox
+          :class "music-icon"
+          "  ")
+        (eventbox
+          :halign "start"
+
+          "${current-song}")
+        (box :class "spacer")
+        (revealer
+          :reveal is_controls
+          :transition "slideright"
+          :duration "1s"
+          (eventbox
+            (box
+              :class "music-controls"
+              (box :class "spacer")
+              (button 
+                :onclick "playerctl -p spotify previous"
+                "玲")
+              (box)
+              (button 
+                :onclick "playerctl -p spotify play-pause"
+                "懶")
+              (box)
+              (button 
+                :onclick "playerctl -p spotify next"
+                "怜")
+              (box)))))
+      (box)))) 
+      
+
+(defwidget wifi [] 
+  (box))
+
+(defwidget time []
+  (box 
+    :class "wime"
+    :halign "start"
+    :orientation "h"
+    (box 
+      :space-evenly true
+      :class "ptext"
+      ctime))) 
+      
+
+(defwidget volum []
+  (box
+    :class "volw"
+    :halign "end"
+    :space-evenly false
+    (eventbox
+      :halign "end"
+      :onclick "kitty"
+      :onhover "eww update is_volume=true"
+      :class "volume-icon"
+      " ")
+    (revealer
+      :spacing 0
+      :halign "end"
+      :transition "slideright"
+      :reveal is_volume
+      :duration "200ms"
+      (eventbox
+        :halign "end"
+        :onhoverlost "eww update is_volume=false"
+        (scale
+          :flipped true
+          :class "volbar"
+          :value current-volume
+          :tooltip "Volume: ${current-volume}%"
+          :max 101
+          :min 0
+          :onchange "amixer -D pulse sset Master {}%")))))
+        
+(defwidget output []
+  (box
+    :halign "end"
+    (eventbox
+      :halign "end"
+      :onhover "eww update is_output=true"
+      :class "output-icon"
+      "${current-output-icon} ")
+    (revealer
+      :halign "end"
+      :transition "slideleft"
+      :reveal is_output
+      :duration "200ms"
+      (eventbox
+        :halign "end"
+        :onhoverlost "eww update is_output=false"
+        :tooltip "Output sink is ${current-output}"
+        (box
+          :halign "end"
+          :class "roption"
+          :space-evenly false
+          (box
+            "${current-output}")
+          (box))))))
+
+
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll current-mic-volume :interval "1s" "pactl")
+(defpoll current-output-icon :interval "1s" "caudio gsink --icons")
+(defpoll current-output :interval "1s" "caudio gsink")
+(defpoll current-song   :interval "1s" "get_current_song")
+(defpoll current-focused-window :interval "1s" "i3-msg -t get_tree | jq '.. | (.nodes? //empty)[] | select(.focused==true).name'")
+(defpoll current-workspace-icon :interval "500ms" "why3 gworkspace --icons")
+(defpoll current-workspace :interval "1s" "why3 gworkspace")
+(defvar is_volume false)
+(defvar is_output false)
+(defvar is_controls false)
+(defvar is_workspaces false)
+(defvar is_ws_switcher false)
