@@ -37,6 +37,8 @@ The dotfiles are in a mess at the moment, this repo contains, some important one
 	+ bash
 	+ qalc
 	+ vifm
+	+ zoxide
+	+ exa
 
 + Neovim
 	+ fzf
@@ -62,11 +64,13 @@ The dotfiles are in a mess at the moment, this repo contains, some important one
 ### Libraries
 
 + Python
+	+ ipython
+	+ spyder
 	+ sympy
 	+ wpm
 	+ yt-dlp
 	+ meson
-	+ animdl
+	+ animdl/ani-cli
 + Rust
 	+ pup
 + Pipewire
