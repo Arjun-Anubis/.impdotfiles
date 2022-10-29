@@ -32,3 +32,38 @@ more information, such as the ld(1) and ld.so(8) manual pages.
 ```
 
 dapt install seatd libstead-dev
+
++ Uninstalled seatd, as sway was enabling on startup, but it didnt work right, might try building from source
+
+
+## Saturday 29 October 2022 04:18 PM
+
+Trying to fix simple-scanner, might add some config, the github page on the ubuntu github is useless, thr true source can be found on gnome's gitlan
+
+Fair warning it takes a while to clone
+
+Cloned.
+
+I'll be using a custom install command set
+
+
+```
+# initliazes the build dir, you can pick anotehr dir, but it must be changed in the -C flag in the following commands
+meson build
+# The reason you have to be root, is libhandy uses some files in .cache that are root owndd
+doas ninja -C build all
+# For actually installing
+doas ninja -C build install
+```
+
+It worked.
+
+I'll give it a test
+
+It fast to startup
+
+There seems to be an option for post processing, I'll add a tesseract script to that
+
+
+Works fine, quite snappy infact
+
