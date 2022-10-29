@@ -28,7 +28,7 @@ default_floating_border pixel 1
 client.focused #353439 #9FEE00 #7B9F35
 focus_follows_mouse yes
 
-font pango:Jet Brains Mono 9
+font pango:JetBrainsMono Nerd Font 9
 font pango:Mangal Regular 9
 
 input "type:keyboard" {

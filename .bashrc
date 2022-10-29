@@ -33,8 +33,8 @@ PS1='\[\033[03;32m\]\u\[\033[03;32m\]@\[\033[03;32m\]\h\[\033[00m\]:\[\033[00;34
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 alias dapt='doas apt'
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias ls='exa --icons'
 alias ll='ls -alF'
 alias la='ls -a'
 alias l='ls -l'
@@ -42,7 +42,6 @@ alias cpv='rsync -ah --info=progress2'
 alias m='ncmpcpp -q'
 alias sys='doas systemctl'
 alias suctl='systemctl --user'
-alias ls='exa'
 alias notif="dunstify"
 alias notic="dunstify -u critical"
 alias notil="dunstify -u low"
@@ -109,9 +108,6 @@ PATH+=:/home/anubi/bin/:/home/anubi/.local/bin:
 # if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 #   exec startx 
 # fi
-if [ $(tty) = "/dev/tty1" ]; then
-	exec startx
-fi
 
 export WINEDEBUG="-all"
 export EDITOR=vim
@@ -128,3 +124,9 @@ figlet Welcome | lolcat
 eval "$(zoxide init bash)"
 export PATH=$PATH:/home/anubi/.spicetify
 HISTTIMEFORMAT="%F %T "        # for e.g. “1999-02-29 23:59:59”
+
+
+
+if [ $(tty) = "/dev/tty1" ]; then
+	exec sway
+fi

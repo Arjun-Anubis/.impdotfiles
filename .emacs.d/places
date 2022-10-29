@@ -1,9 +1,10 @@
 ;;; -*- coding: utf-8 -*-
-(("/home/anubi/.emacs.d/recentf" . 1264)
+(("/home/anubi/Zettellkasten/sin.md" . 5)
+ ("/home/anubi/.impdotfiles/.emacs.d/init.el" . 3705)
+ ("/home/anubi/.emacs.d/recentf" . 1165)
  ("/home/anubi/general/TODO.org" . 3)
  ("/home/anubi/"
   (dired-filename . "/home/anubi/.adobe"))
- ("/home/anubi/.impdotfiles/.emacs.d/init.el" . 6596)
  ("/home/anubi/general/OpenHouse/main.org" . 7050)
  ("/home/anubi/general/OpenHouse/intro_monologue" . 453)
  ("/home/anubi/general/OpenHouse/main.md" . 2)
