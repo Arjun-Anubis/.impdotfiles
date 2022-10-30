@@ -14,6 +14,7 @@ The dotfiles are in a mess at the moment, this repo contains, some important one
 
 
 + bash, under .bashrc and bash from Oct 28th, 2022, bashrc -> ~, bash -> .config
++ starship, under starship.toml -> .config
 
 NOTE: The bash folder is non standard
 
@@ -38,6 +39,7 @@ NOTE: The bash folder is non standard
 + kitty
 	+ tmux
 	+ bash
+		+ starship
 	+ qalc
 	+ vifm
 	+ zoxide
