@@ -9,7 +9,7 @@ eval "$(zoxide init bash)"
 
 # Powerline
 
-repository_root=/usr/lib/python3/dist-packages
+repository_root=~/.local/lib/python3.10/site-packages
 # From pip show powerline-status
 
 powerline-daemon -q
