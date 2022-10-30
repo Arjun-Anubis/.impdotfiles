@@ -21,4 +21,7 @@ Added modeline to keyboard.conf
 Fixed startup open whatsapp
 Removed gimp from startup
 
+## Sunday 30 October 2022 03:10 PM
 
+
+Added starship -> bash
