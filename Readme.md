@@ -13,7 +13,10 @@ The dotfiles are in a mess at the moment, this repo contains, some important one
 + Eww, under eww -> .config
 
 
-+ bash, under .bashrc, reasonably recent -> ~
++ bash, under .bashrc and bash from Oct 28th, 2022, bashrc -> ~, bash -> .config
+
+NOTE: The bash folder is non standard
+
 + Tmux, under .tmux.conf -> ~
 + X, under .Xresources, .xmodmpat, .xinitrc -> ~
 + zsh, under .zshrc -> ~
@@ -71,6 +74,7 @@ The dotfiles are in a mess at the moment, this repo contains, some important one
 	+ yt-dlp
 	+ meson
 	+ animdl/ani-cli
+	+ powerline-status
 + Rust
 	+ pup
 + Pipewire

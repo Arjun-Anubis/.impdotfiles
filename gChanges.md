@@ -67,3 +67,9 @@ There seems to be an option for post processing, I'll add a tesseract script to 
 
 Works fine, quite snappy infact
 
+## Sunday 30 October 2022 02:29PM
+
+
+Bug with telescope on ubuntu, the program used for listing files, fd is installed as fdfind
+
+No simle way to change that program in telescope, plus the default program fd is in japanese, simples solution is to delete it and but fdfind at the local bin, as I have redone
