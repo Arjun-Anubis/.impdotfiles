@@ -25,3 +25,6 @@ Removed gimp from startup
 
 
 Added starship -> bash
+
+
+Re installed nvim plugins
