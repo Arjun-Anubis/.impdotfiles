@@ -28,3 +28,8 @@ Added starship -> bash
 
 
 Re installed nvim plugins
+
+
+Deleted tons of stuff in anubi_old
+
+Repot from du -H, 80% used, 39GB left
