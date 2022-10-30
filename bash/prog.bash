@@ -7,12 +7,18 @@ export FZF_DEFAULT_OPTS="--border"
 eval "$(zoxide init bash)"
 
 
-# Powerline
+# # Powerline
 
-repository_root=~/.local/lib/python3.10/site-packages
+# repository_root=~/.local/lib/python3.10/site-packages
 # From pip show powerline-status
 
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. $repository_root/powerline/bindings/bash/powerline.sh
+# powerline-daemon -q
+# POWERLINE_BASH_CONTINUATION=1
+# POWERLINE_BASH_SELECT=1
+# . $repository_root/powerline/bindings/bash/powerline.sh
+#
+
+
+# Starship ( powerline alternative )
+
+eval "$(starship init bash)"
