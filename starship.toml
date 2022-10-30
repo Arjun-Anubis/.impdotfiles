@@ -3,4 +3,5 @@
 
 # Modules
 [git_status]
-up_to_date="Up to date"
+# up_to_date="Up to date"
+style="bold green"
