@@ -3,5 +3,19 @@
 
 # Modules
 [git_status]
-# up_to_date="Up to date"
 style="bold green"
+
+
+[localip]
+ssh_only=true
+disabled=false
+
+
+[sudo]
+disabled=false
+
+[python]
+python_binary= [ "python3", "python2", "python" ]
+
+[jobs]
+disabled=false
