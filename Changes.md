@@ -33,3 +33,9 @@ Re installed nvim plugins
 Deleted tons of stuff in anubi_old
 
 Repot from du -H, 80% used, 39GB left
+
+## Mondat, 31 October 2022, 19:14 PM
+
+Added exa icon spacing set to 2
+
+Fixed: Eww, text size, padding, resever/exclusive
