@@ -4,7 +4,8 @@
 }
 
 $icon_size: 20px;
-$module_radius: 16px;
+$text_size: 14px;
+$module_radius: 20px;
 $upper_padding: 0;
 $lower_padding: 0;
 $module_padding: $lower_padding 10px $upper_padding 10px;
@@ -25,7 +26,7 @@ $cyan: #7DCFFF;
 $white: $foreground;
 
 $accent: $green;
-$text_font: "Jet Brains Mono Nerd Font";
+$text_font: "JetBrainsMono Nerd Font";
 
 .spacer {
 	padding: $module_padding;
@@ -52,7 +53,8 @@ $text_font: "Jet Brains Mono Nerd Font";
 
 .ptext {
 	// font-family: "Font Awesome 6 Free";
-	font-family: $text_font;
+	// font-family: $text_font;
+	font-size: $text_size;
 	padding: $module_padding;
 }
 
@@ -74,6 +76,7 @@ $text_font: "Jet Brains Mono Nerd Font";
 	padding: 0 5px 0 5px;
 	background-color: #458588;
 	border-radius: $module_radius;
+	
 }
  
 .output-icon{
@@ -120,7 +123,7 @@ scale trough {
 }
 
 .roption {
-	font-family: "Jet Brains Mono Nerd Font";
+	font-family: $text_font;
 	background-color: $secondary_background;
 	border-radius: $module_radius;
 	padding: 10px 10px 10px 10px;
